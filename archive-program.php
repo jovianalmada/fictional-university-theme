@@ -19,8 +19,12 @@
   echo paginate_links();
   ?>
   </ul>
+<<<<<<< HEAD
   <hr class="section-break">
 </div>
+=======
+  </div>
+>>>>>>> b15ee243c4a3d146c359b07715f65b31ef652438
 <?php
  get_footer();
  ?>
