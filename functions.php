@@ -22,6 +22,14 @@ add_action('after_setup_theme', 'university_features');
 // if the query is a not wpadmin based, is an archive of the event and it's a main query and not a custom query
 function university_adjust_queries($query) {
   $today = date('Ymd');
+
+  if (!is_admin() AND is_post_type_archive('program') AND $query -> is_main_query()){    
+    $query->set('orderby', 'title');
+    $query->set('order', 'ASC');
+    $query->set('posts_per_page', -1);
+  }
+}
+
   if (!is_admin() AND is_post_type_archive('event') AND $query -> is_main_query()){
     $query->set('meta_key', 'event_date');
     $query->set('orderby', 'meta_value_num');
@@ -35,7 +43,6 @@ function university_adjust_queries($query) {
     )
     ));
   }
-}
 
 add_action('pre_get_posts', 'university_adjust_queries');
 
