@@ -19,9 +19,7 @@ get_header();
        <span class="metabox__main"><?php the_title(); ?></span></p>
     </div>
       <div class="generic-content"><?php the_content() ?></div>
-      <?php 
-      $relatedPrograms = get_field('related_programs')
-      ?>
+      
     </div>
         <?php
     }
