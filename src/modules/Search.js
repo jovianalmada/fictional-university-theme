@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 class Search {
   // 1.) describe and create / initiate our project
   constructor() {
